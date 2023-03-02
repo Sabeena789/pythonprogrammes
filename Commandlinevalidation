@@ -1,0 +1,13 @@
+import subprocess
+#execution  of the command
+#output=subprocess.check_output("ipconfig",shell=True)
+def my_function():
+    #output = subprocess.run("ipconfig", shell=True)
+    output=subprocess.run(["ipconfig"],capture_output=True)
+    print("command output",output)
+    #string validation
+    if "Link-local IPv6 Address" in str(output):
+        print("string exist in a file")
+    else:
+        print("string does not exist in a file")
+my_function()
